@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>我胖虎谁都不怕-我是程序员，平凡有一点理想，渴望让世界不一样</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="keywords" content="我胖虎谁都不怕,张思翔个人博客,技术分享,前端开发,免费资源,html5小游戏,在线音乐解析下载">
+        <meta name="description" itemprop="description" itemprop="name" content="我是程序员，平凡有一点理想，渴望让世界不一样">
+        <link rel="shortcut icon" href="http://www.zsxcool.com/wp-content/themes/lolimeow/assets/images/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="styles/cube.css">
+        <link rel="stylesheet" type="text/css" href="styles/base.css">
+
+
+
+
+        <style>
+            .button {
+                position:absolute;
+                top:0;
+                left:0;
+                margin-top:2px;
+            }
+            .button input{
+                background-color:#333;
+                padding:5px;
+                border:none;
+                color:#fff;
+            }
+        </style>
+
+
+
+    </head>
+    <body class="graydient" >
+        <div id="container" ></div>
+        <div id="fail">
+            <h1>我胖虎谁都不怕,</h1>
+            <h2>Rubik's Cube</h2>
+        </div>
+        <div class="button" style="display: none;">
+            <input type="button" value=" 打 乱 " id="shuffle" />
+            <input type="button" value=" ↶ " id="undo" />
+            <input type="button" value=" ↷ " id="redo" />
+        </div>
+
+        <script>
+            function stop(){
+            return false;
+            }
+            document.oncontextmenu=stop;
+        </script>
+
+
+        <script charset="utf-8" src="build/cuber.js"></script>
+
+        <script charset="utf-8" src="build/cuber.min.js"></script>
+
+
+
+        <script charset="utf-8" src="build/jquery.js"></script>
+        <script charset="utf-8" src="build/main.js"></script>
+
+        <script>
+            $(function () {
+
+                $('#shuffle').click(function () {
+                    console.log('shuffle');
+                    var x = window.cube.shuffle();
+                    console.log(x);
+                });
+
+                $('#undo').click(function () {
+                    console.log('undo');
+                    var x = window.cube.undo();
+                    console.log(x);
+                });
+
+                $('#redo').click(function () {
+                    console.log('redo');
+                    var x = window.cube.redo();
+                    console.log(x);
+                });
+            });
+        </script>
+
+    </body>
+</html>
